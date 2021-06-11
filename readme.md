@@ -1,6 +1,4 @@
-# <center>Welcome to Badoo AutoLike Bot 🛠</center>
-
-
+<h1 align="center">Welcome to Badoo AutoLike Bot 🛠</h1>
 
 # EN
 
