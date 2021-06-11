@@ -8,11 +8,14 @@ The Bot is fully automated.
 You only need to configure the configuration file `config.env`
 
 ```sh
-LOGIN=123456789_example
-PASSWORD=saSDAfaw_example
+LOGIN=YOUR_LOGIN
+PASSWORD=YOUR_PASS
 ```
 
 ## Start
+To start the bot, open `start.bat`
+
+OR
 
 Open the terminal in the folder with the bot and enter the commands
 
