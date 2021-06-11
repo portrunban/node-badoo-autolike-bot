@@ -1,4 +1,4 @@
-# <center>Welcome to Badoo AutoLike Bot 🛠</center>
+# Welcome to Badoo AutoLike Bot 🛠
 
 
 
