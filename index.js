@@ -22,10 +22,28 @@ dotenv.config({ path: './config.env' });
     await page.waitForSelector('.js-profile-header-vote-yes');
     await page.click('.js-profile-header-vote-yes');
     await page.waitForTimeout(2000);
-
+    let crossLike = await page.$('.ovl-match');
+    if (crossLike) {
+      await page.click('.icon.icon--white.js-ovl-close');
+      await page.waitForTimeout(2000);
+    }
     const pushAlert = await page.$('.js-chrome-pushes-deny');
     if (pushAlert) {
       await page.click('.js-chrome-pushes-deny');
     }
+    // GET SCREENSHOT PAGE IF EXIST DESCRIPTION
+    // let profileName = await page.$eval('.profile-header__name', (e) => e.innerText);
+    // let profileAge = await page.$eval('.profile-header__age', (e) => e.innerText);
+    // let profileAboutMe = await page.$(".profile-section__txt-line[dir]");
+    // if (profileAboutMe) {
+    //   await page.screenshot({
+    //     path: `./data/photo/${profileName}-${profileAge.replace(
+    //       /,\s/,
+    //       ""
+    //     )}-${Date.now()}.png`,
+    //     type: "png",
+    //   });
+    //   console.log('скрин');
+    // }
   }
 })();

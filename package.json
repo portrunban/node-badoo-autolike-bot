@@ -1,16 +1,24 @@
 {
   "name": "badoo-autolike",
   "version": "1.0.0",
-  "description": "",
+  "description": "Автолайк бот для сайта знакомств Badoo. Для работы нужно заполнить `config.env`",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
     "puppeteer": "^5.5.0"
   },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Progovich/node-badoo-autolike-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Progovich/node-badoo-autolike-bot/issues"
+  },
+  "homepage": "https://github.com/Progovich/node-badoo-autolike-bot#readme"
 }
