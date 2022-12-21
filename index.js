@@ -20,8 +20,15 @@ dotenv.config({ path: './config.env' });
   await page.click('.btn--block');
   while (true) {
     await page.waitForSelector('.js-profile-header-vote-yes');
+    let cookiesAccept = await page.$('#notice > div.message-component.message-row.box-shadow > div:nth-child(3) > div.message-component.message-row.button-row > button.message-component.message-button.no-children.focusable.button.sp_choice_type_11');
+    if (cookiesAccept) {
+      await page.click('#notice > div.message-component.message-row.box-shadow > div:nth-child(3) > div.message-component.message-row.button-row > button.message-component.message-button.no-children.focusable.button.sp_choice_type_11');
+      await page.waitForTimeout(2000);
+    }
+
     await page.click('.js-profile-header-vote-yes');
     await page.waitForTimeout(2000);
+
     let crossLike = await page.$('.ovl-match');
     if (crossLike) {
       await page.click('.icon.icon--white.js-ovl-close');
@@ -32,18 +39,18 @@ dotenv.config({ path: './config.env' });
       await page.click('.js-chrome-pushes-deny');
     }
     // GET SCREENSHOT PAGE IF EXIST DESCRIPTION
-    // let profileName = await page.$eval('.profile-header__name', (e) => e.innerText);
-    // let profileAge = await page.$eval('.profile-header__age', (e) => e.innerText);
-    // let profileAboutMe = await page.$(".profile-section__txt-line[dir]");
-    // if (profileAboutMe) {
-    //   await page.screenshot({
-    //     path: `./data/photo/${profileName}-${profileAge.replace(
-    //       /,\s/,
-    //       ""
-    //     )}-${Date.now()}.png`,
-    //     type: "png",
-    //   });
-    //   console.log('скрин');
-    // }
+    let profileName = await page.$eval('.profile-header__name', (e) => e.innerText);
+    let profileAge = await page.$eval('.profile-header__age', (e) => e.innerText);
+    let profileAboutMe = await page.$(".profile-section__txt-line[dir]");
+    if (profileAboutMe) {
+      await page.screenshot({
+        path: `./data/photo/${profileName}-${profileAge.replace(
+          /,\s/,
+          ""
+        )}-${Date.now()}.png`,
+        type: "png",
+      });
+      console.log('скрин');
+    }
   }
 })();
